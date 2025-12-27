@@ -78,7 +78,7 @@
     "react-intl": "^6.5.5",
     "react-number-format": "^5.3.1",
     "react-organizational-chart": "^2.2.1",
-    "react-quill": "^2.0.0",
+    "react-quill": "^0.0.2",
     "react-slick": "^0.29.0",
     "react-spring": "^9.7.3",
     "react-syntax-highlighter": "^16.1.0",
