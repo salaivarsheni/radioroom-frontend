@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import './globals.css';
-import '@/utils/dayjs';
+import '../utils/dayjs';
+
 
 
 // PROJECT IMPORTS
