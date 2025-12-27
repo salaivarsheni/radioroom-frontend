@@ -12,14 +12,9 @@ import { useRouter } from 'next/navigation';
 const StoriesPage = () => {
   const router = useRouter();
   return (
-
     <Grid container spacing={3}>
       <Grid item xs={12} sx={{ mb: 3, display: 'flex', justifyContent: 'flex-end' }}>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => router.push('/dashboard/stories/add-stories')}
-        >
+        <Button variant="contained" color="primary" onClick={() => router.push('/dashboard/stories/add-stories')}>
           Add Stories
         </Button>
       </Grid>

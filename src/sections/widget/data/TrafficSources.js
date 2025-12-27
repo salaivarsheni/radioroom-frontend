@@ -1,10 +1,11 @@
+'use client';
+
 // MATERIAL - UI
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import LinearProgress from '@mui/material/LinearProgress';
 import { useMemo, useEffect, useState } from 'react';
 import axiosServices from 'utils/axios';
-
 
 // PROJECT IMPORTS
 import MainCard from 'components/MainCard';
@@ -18,10 +19,10 @@ const TrafficSources = () => {
     const fetchSubscriptionSummary = async () => {
       // Calls your API to get the JSON with { categories, monthly, quarterly, annual } arrays
       try {
-        const res = await axiosServices.post("", { method: "subscription_summary" });
+        const res = await axiosServices.post('', { method: 'subscription_summary' });
         setSubscriptionSummary(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     fetchSubscriptionSummary();
@@ -86,6 +87,5 @@ const TrafficSources = () => {
     </MainCard>
   );
 };
-
 
 export default TrafficSources;

@@ -40,7 +40,7 @@ const ProfilePage = () => {
     try {
       signOut({ redirect: false });
       router.push('/login');
-    } catch (err) { }
+    } catch (err) {}
   };
 
   const anchorRef = useRef(null);

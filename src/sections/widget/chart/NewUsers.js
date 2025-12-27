@@ -43,7 +43,6 @@ const NewOrders = () => {
           count = data.paid_story_count || 0;
         }
         setPaidStoryCount(count);
-
       } catch (error) {
         console.error('Error fetching free stories:', error);
       }
@@ -57,7 +56,6 @@ const NewOrders = () => {
         console.log('Paid stories response:', response.data);
 
         setPaidStoryList(response.data);
-
       } catch (error) {
         console.error('Error fetching paid stories:', error);
       }
@@ -75,7 +73,9 @@ const NewOrders = () => {
           <Grid item xs={12}>
             <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1}>
               <Stack spacing={0.5}>
-                <Typography variant="h5" color="textSecondary">Paid Stories</Typography>
+                <Typography variant="h5" color="textSecondary">
+                  Paid Stories
+                </Typography>
                 <Typography variant="h3" sx={{ fontWeight: 700 }}>
                   {paidStoryCount}
                 </Typography>
@@ -138,7 +138,6 @@ const NewOrders = () => {
                     ))}
                   </tbody>
                 </table>
-
               </Box>
             )}
           </Grid>

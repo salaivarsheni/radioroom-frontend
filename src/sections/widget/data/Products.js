@@ -74,12 +74,7 @@ function ReactTable({ columns, data }) {
           <Typography variant="h5" color="primary" align="center" sx={{ fontWeight: 600 }}>
             Subscription Counts
           </Typography>
-          <Stack
-            direction={matchDownSM ? 'column' : 'row'}
-            alignItems="center"
-            justifyContent="space-between"
-            spacing={1}
-          >
+          <Stack direction={matchDownSM ? 'column' : 'row'} alignItems="center" justifyContent="space-between" spacing={1}>
             <Stack direction="row" alignItems="center" spacing={2}>
               <Typography variant="body1" color="primary.main">
                 Results :
@@ -99,11 +94,7 @@ function ReactTable({ columns, data }) {
                 </Select>
               </FormControl>
             </Stack>
-            <GlobalFilter
-              preGlobalFilteredRows={preGlobalFilteredRows}
-              globalFilter={globalFilter}
-              setGlobalFilter={setGlobalFilter}
-            />
+            <GlobalFilter preGlobalFilteredRows={preGlobalFilteredRows} globalFilter={globalFilter} setGlobalFilter={setGlobalFilter} />
           </Stack>
         </Stack>
       </Box>
@@ -115,9 +106,7 @@ function ReactTable({ columns, data }) {
               <TableRow {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column, i) => (
                   <Fragment key={i}>
-                    <TableCell {...column.getHeaderProps([{ className: column.className }])}>
-                      {column.render('Header')}
-                    </TableCell>
+                    <TableCell {...column.getHeaderProps([{ className: column.className }])}>{column.render('Header')}</TableCell>
                   </Fragment>
                 ))}
               </TableRow>
@@ -133,9 +122,7 @@ function ReactTable({ columns, data }) {
                   <TableRow {...row.getRowProps()}>
                     {row.cells.map((cell, index) => (
                       <Fragment key={index}>
-                        <TableCell {...cell.getCellProps([{ className: cell.column.className }])}>
-                          {cell.render('Cell')}
-                        </TableCell>
+                        <TableCell {...cell.getCellProps([{ className: cell.column.className }])}>{cell.render('Cell')}</TableCell>
                       </Fragment>
                     ))}
                   </TableRow>
@@ -183,16 +170,16 @@ const Products = () => {
     const fetchSubscription = async () => {
       // Calls your API to get the JSON with { categories, monthly, quarterly, annual } arrays
       try {
-        const res = await axiosServices.post("", { method: "subscription_count" });
+        const res = await axiosServices.post('', { method: 'subscription_count' });
         setSubscriptionCount(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     fetchSubscription();
   }, []);
   const data = useMemo(() => {
-     // Guard clause: If data hasn't loaded yet, show an empty table
+    // Guard clause: If data hasn't loaded yet, show an empty table
     if (!subscriptionCount?.categories) return [];
 
     return subscriptionCount?.categories.map((month, index) => ({

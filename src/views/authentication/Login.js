@@ -18,7 +18,6 @@ const Login = () => {
     try {
       const response = await axiosServices.post('', {
         method: 'login'
-       
       });
 
       // ✅ SUCCESS
@@ -35,16 +34,13 @@ const Login = () => {
       else {
         alert('Invalid email or password');
       }
-
     } catch (error) {
       console.error(error);
       alert('Something went wrong. Please try again.');
     }
   };
 
-
   return (
-
     <AuthWrapper>
       <Grid container spacing={3}>
         <Grid item xs={12} sx={{ textAlign: 'center' }}>

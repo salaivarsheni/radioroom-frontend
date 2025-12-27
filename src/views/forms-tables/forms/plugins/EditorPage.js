@@ -6,7 +6,6 @@ import Grid from '@mui/material/Grid';
 
 // PROJECT IMPORTS
 import ReactDraft from 'sections/forms/plugins/ReactDraft';
-import ReactQuill from 'sections/forms/plugins/ReactQuill';
 import MainCard from 'components/MainCard';
 import useConfig from 'hooks/useConfig';
 
@@ -130,9 +129,9 @@ const EditorPage = () => {
           }
         }}
       >
-        <MainCard title="React Quill">
+        {/* <MainCard title="React Quill">
           <ReactQuill />
-        </MainCard>
+        </MainCard> */}
       </Grid>
     </Grid>
   );

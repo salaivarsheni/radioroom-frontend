@@ -53,14 +53,15 @@ const areaChartOptions = {
 
 // ==============================|| CHART - REPEAT CUSTOMER CHART ||============================== //
 
-const RepeatCustomerChart = ({ viewType }) => {//get viewtype like this since we passed it with the component
+const RepeatCustomerChart = ({ viewType }) => {
+  //get viewtype like this since we passed it with the component
   const theme = useTheme();
-//searchparamas is using url only so dont need to use it.
+  //searchparamas is using url only so dont need to use it.
   const mode = theme.palette.mode;
   const { primary, secondary } = theme.palette.text;
   const line = theme.palette.divider;
 
-  const [options, setOptions] = useState(areaChartOptions);// "default settings" for how the chart looks and behaves.
+  const [options, setOptions] = useState(areaChartOptions); // "default settings" for how the chart looks and behaves.
   const [series, setSeries] = useState([
     {
       name: 'Registered Users',
@@ -71,7 +72,7 @@ const RepeatCustomerChart = ({ viewType }) => {//get viewtype like this since we
   useEffect(() => {
     const fetchRepeatCustomerData = async () => {
       try {
-        const response = await axios.post("", { method: 'usergraph', viewType: viewType });
+        const response = await axios.post('', { method: 'usergraph', viewType: viewType });
         if (response.data) {
           const { categories, data } = response.data;
           setSeries([{ name: 'Registered Users', data: data || [] }]);

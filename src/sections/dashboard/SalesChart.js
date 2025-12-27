@@ -5,12 +5,8 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Checkbox from '@mui/material/Checkbox';
 import MenuItem from '@mui/material/MenuItem';
-import FormGroup from '@mui/material/FormGroup';
 import Typography from '@mui/material/Typography';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Select from '@mui/material/Select';
 
 // PROJECT IMPORTS
@@ -86,8 +82,6 @@ const SalesChart = () => {
     setAge(event.target.value);
   };
 
-
-
   const mode = theme.palette.mode;
   const { primary, secondary } = theme.palette.text;
   const line = theme.palette.divider;
@@ -104,8 +98,6 @@ const SalesChart = () => {
   ];
 
   const [series, setSeries] = useState(initialSeries);
-
-
 
   const xsDown = useMediaQuery(theme.breakpoints.down('sm'));
   const [options, setOptions] = useState(columnChartOptions);

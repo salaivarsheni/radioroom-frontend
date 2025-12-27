@@ -44,7 +44,6 @@ const NewOrders = () => {
           count = data.free_story_count || 0;
         }
         setFreeStoryCount(count);
-
       } catch (error) {
         console.error('Error fetching free stories:', error);
       }
@@ -59,7 +58,6 @@ const NewOrders = () => {
         console.log('Free stories response:', response.data);
 
         setFreestoryList(response.data);
-
       } catch (error) {
         console.error('Error fetching free stories:', error);
       }
@@ -78,7 +76,9 @@ const NewOrders = () => {
           <Grid item xs={12}>
             <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1}>
               <Stack spacing={0.5}>
-                <Typography variant="h5" color="textSecondary">Free Stories</Typography>
+                <Typography variant="h5" color="textSecondary">
+                  Free Stories
+                </Typography>
                 <Typography variant="h3" sx={{ fontWeight: 700 }}>
                   {freeStoryCount}
                 </Typography>
@@ -141,10 +141,8 @@ const NewOrders = () => {
                     ))}
                   </tbody>
                 </table>
-
               </Box>
             )}
-
           </Grid>
         </Grid>
       </Box>

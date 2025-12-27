@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getSession } from 'next-auth/react';
 
-const axiosServices = axios.create({ baseURL: "https://u9aitppdjl.execute-api.ap-south-1.amazonaws.com/mystage"});
+const axiosServices = axios.create({ baseURL: 'https://u9aitppdjl.execute-api.ap-south-1.amazonaws.com/mystage' });
 
 // ==============================|| AXIOS - FOR MOCK SERVICES ||============================== //
 

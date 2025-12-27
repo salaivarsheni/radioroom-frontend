@@ -3,10 +3,8 @@ import Image from 'next/image';
 
 // MATERIAL - UI
 import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 // PROJECT IMPORTS
@@ -49,12 +47,10 @@ const WelcomeBanner = () => {
           <Stack spacing={2} sx={{ padding: 3 }}>
             <Typography variant="h2" color={theme.palette.background.paper}>
               Radioroom Managment Dashboard
-
             </Typography>
             <Typography variant="h6" color={theme.palette.background.paper}>
               An Excellent Storytelling Application!
             </Typography>
-            
           </Stack>
         </Grid>
         <Grid item sm={6} xs={12} sx={{ display: { xs: 'none', sm: 'initial' } }}>

@@ -12,18 +12,16 @@ import axiosServices from 'utils/axios';
 // PROJECT IMPORTS
 import EcommerceDataCard from 'components/cards/statistics/EcommerceDataCard';
 
-
 import RepeatCustomerRate from 'sections/widget/chart/RepeatCustomerRate';
 import TrafficSources from 'sections/widget/data/TrafficSources';
 import ProjectAnalytics from 'sections/widget/chart/ProjectAnalytics';
 
 import Products from 'sections/widget/data/Products';
 
-
 // ASSETS
 import { ArrowDown, ArrowUp, Book, Calendar, CloudChange, Wallet3 } from 'iconsax-react';
 import WelcomeBanner from 'sections/dashboard/default/WelcomeBanner';
-import { Divider } from '../../../node_modules/@mui/material/index';
+import { Divider } from '@mui/material';
 
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
@@ -42,74 +40,74 @@ const DashboardDefault = () => {
   useEffect(() => {
     const fetchStory = async () => {
       try {
-        const res1 = await axiosServices.post("", { method: "story" });
+        const res1 = await axiosServices.post('', { method: 'story' });
         setStoryData(res1.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     const fetchUser = async () => {
       try {
-        const res = await axiosServices.post("", { method: "user" });
+        const res = await axiosServices.post('', { method: 'user' });
         setUserData(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     const fetchPlan = async () => {
       try {
-        const res = await axiosServices.post("", { method: "plans" });
+        const res = await axiosServices.post('', { method: 'plans' });
         setPlanData(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     const fetchAuthor = async () => {
       try {
-        const res = await axiosServices.post("", { method: "author" });
+        const res = await axiosServices.post('', { method: 'author' });
         setAuthorData(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     const fetchAuthorCard = async () => {
       try {
-        const res = await axiosServices.post("", { method: "author_card" });
+        const res = await axiosServices.post('', { method: 'author_card' });
         setAuthorCard(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     const fetchNarrator = async () => {
       try {
-        const res = await axiosServices.post("", { method: "narrator" });
+        const res = await axiosServices.post('', { method: 'narrator' });
         setNarrator(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     const fetchSubscription = async () => {
       try {
-        const res = await axiosServices.post("", { method: "subscription_count" });
+        const res = await axiosServices.post('', { method: 'subscription_count' });
         setSubscriptionCount(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     const fetchUserActivity = async () => {
       try {
-        const res = await axiosServices.post("", { method: "active_users" });
+        const res = await axiosServices.post('', { method: 'active_users' });
         setUserActivity(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     const fetchActivePlan = async () => {
       try {
-        const res = await axiosServices.post("", { method: "active_plans" });
+        const res = await axiosServices.post('', { method: 'active_plans' });
         setActivePlan(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     fetchUser();
@@ -138,11 +136,7 @@ const DashboardDefault = () => {
 
       {/* row 1 */}
       <Grid item xs={12} sm={6} lg={3}>
-        <EcommerceDataCard
-          title={`Registered Users - ${userData?.[0]?.total_users}  `}
-          iconPrimary={<Wallet3 />}
-          sx={{ height: '100%' }}
-        >
+        <EcommerceDataCard title={`Registered Users - ${userData?.[0]?.total_users}  `} iconPrimary={<Wallet3 />} sx={{ height: '100%' }}>
           {userData?.map((item, index) => (
             <Box key={index} sx={{ width: '100%' }}>
               <Box display="flex" justifyContent="space-between" my={2}>
@@ -163,7 +157,6 @@ const DashboardDefault = () => {
               </Box>
             </Box>
           ))}
-
         </EcommerceDataCard>
       </Grid>
       <Grid item xs={12} sm={6} lg={3} overflow={'inherit'}>
@@ -176,8 +169,12 @@ const DashboardDefault = () => {
         >
           {storyData?.data?.map((item) => (
             <Box key={item.language_name} display="flex" justifyContent="space-between" my={0.5}>
-              <Typography variant="body2" mr={1}>{item.language_name}</Typography>
-              <Typography variant="body2" mr={-6} fontWeight={600}>{item.count}</Typography>
+              <Typography variant="body2" mr={1}>
+                {item.language_name}
+              </Typography>
+              <Typography variant="body2" mr={-6} fontWeight={600}>
+                {item.count}
+              </Typography>
             </Box>
           ))}
         </EcommerceDataCard>
@@ -242,8 +239,12 @@ const DashboardDefault = () => {
         >
           {planData?.data?.map((item, index) => (
             <Box key={item.plan_name} display="flex" justifyContent="space-between" my={0.5}>
-              <Typography variant="body2" mr={1}>{item.plan_name}</Typography>
-              <Typography variant="body2" mr={-6} fontWeight={600}>{item.user_count}</Typography>
+              <Typography variant="body2" mr={1}>
+                {item.plan_name}
+              </Typography>
+              <Typography variant="body2" mr={-6} fontWeight={600}>
+                {item.user_count}
+              </Typography>
             </Box>
           ))}
         </EcommerceDataCard>
@@ -262,8 +263,10 @@ const DashboardDefault = () => {
         <Stack spacing={3}>
           <EcommerceDataCard
             title="Active User Details"
-            count="" color="error"
-            iconPrimary={<CloudChange color={theme.palette.error.dark} />}>
+            count=""
+            color="error"
+            iconPrimary={<CloudChange color={theme.palette.error.dark} />}
+          >
             <Box sx={{ width: '100%' }}>
               <Box display="flex" justifyContent="space-between" my={2}>
                 <Typography variant="body2" mr={1}>
@@ -275,7 +278,6 @@ const DashboardDefault = () => {
               </Box>
             </Box>
 
-
             {activePlan?.map((item, index) => (
               <Box key={index} sx={{ width: '100%' }}>
                 <Box display="flex" justifyContent="space-between" my={2}>
@@ -286,7 +288,6 @@ const DashboardDefault = () => {
                     {item.active_users}
                   </Typography>
                 </Box>
-
               </Box>
             ))}
           </EcommerceDataCard>

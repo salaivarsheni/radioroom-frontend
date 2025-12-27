@@ -27,7 +27,6 @@ import ScrollX from 'components/ScrollX';
 import { TablePagination } from 'components/third-party/ReactTable';
 import { renderFilterTypes } from 'utils/react-table';
 
-
 // ==============================|| REACT TABLE ||============================== //
 
 function ReactTable({ columns, data }) {
@@ -120,38 +119,31 @@ const AuthorCard = () => {
   const [authorData, setAuthorData] = useState(null);
   useEffect(() => {
     const fetchauthor = async () => {
-
       try {
-        const res = await axiosServices.post("", { method: "author" });
+        const res = await axiosServices.post('', { method: 'author' });
         setAuthorData(res.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     fetchauthor();
   }, []);
 
-
-
-  
   const data = useMemo(() => {
     if (!authorData?.data) return [];
     return authorData?.data.map((item) => ({
       id: item.sno,
       authorName: item.author_name,
       authorId: item.author_id,
-      Emailid: item.email_id,
-
-
+      Emailid: item.email_id
     }));
   }, [authorData]);
-
 
   const columns = useMemo(
     () => [
       {
         Header: 'S.NO',
-        accessor: 'id',
+        accessor: 'id'
       },
       {
         Header: 'AUTHOR NAME',
@@ -164,20 +156,20 @@ const AuthorCard = () => {
       },
       {
         Header: 'AUTHOR ID',
-        accessor: 'authorId',
+        accessor: 'authorId'
       },
       {
         Header: 'Email ID',
-        accessor: 'Emailid',
+        accessor: 'Emailid'
       },
       {
-        Header: 'ChapterID',
+        Header: 'ChapterID'
         // accessor: 'chapterId',
       },
       {
-        Header: 'Update Date',
+        Header: 'Update Date'
         // accessor: 'updateDate',
-      },
+      }
     ],
     []
   );

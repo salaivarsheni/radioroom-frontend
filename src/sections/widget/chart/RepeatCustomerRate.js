@@ -18,8 +18,7 @@ import IconButton from 'components/@extended/IconButton';
 
 const RepeatCustomerRate = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [viewType, setViewType] = useState('monthly');//setting viewtype to pass n fix in buttons
-
+  const [viewType, setViewType] = useState('monthly'); //setting viewtype to pass n fix in buttons
 
   const open = Boolean(anchorEl);
 
@@ -65,8 +64,22 @@ const RepeatCustomerRate = () => {
           }}
         >
           {/* <ListItemButton onClick={handleClose}>Today</ListItemButton> */}
-          <ListItemButton onClick={() => { setViewType('weekly'); handleClose() }}>Weekly</ListItemButton>
-          <ListItemButton onClick={() => { setViewType('monthly'); handleClose() }}>Monthly</ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              setViewType('weekly');
+              handleClose();
+            }}
+          >
+            Weekly
+          </ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              setViewType('monthly');
+              handleClose();
+            }}
+          >
+            Monthly
+          </ListItemButton>
         </Menu>
       </Stack>
       <Stack direction="row" alignItems="center" justifyContent="flex-end" spacing={0.5} sx={{ mt: 1 }}>
@@ -74,7 +87,7 @@ const RepeatCustomerRate = () => {
         <Chip color="success" variant="filled" label="+2.6%" size="small" sx={{ bgcolor: 'success.main', borderRadius: 1 }} />
       </Stack>
       <Box sx={{ overflowX: 'auto', overflowY: 'hidden' }}>
-        <RepeatCustomerChart viewType={viewType}/> 
+        <RepeatCustomerChart viewType={viewType} />
         {/* Pass viewType to chart */}
       </Box>
     </MainCard>

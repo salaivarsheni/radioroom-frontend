@@ -50,7 +50,6 @@ const Navigation = () => {
     } else if (!menuLoading && dashboardMenu?.id !== undefined && !isFound(menuItem, 'group-dashboard')) {
       // menuItem.items.splice(0, 1, dashboardMenu);
       setMenuItems({ items: [...menuItem.items] });
-
     } else {
       setMenuItems({ items: [...menuItem.items] });
     }

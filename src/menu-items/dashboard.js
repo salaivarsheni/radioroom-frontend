@@ -26,7 +26,7 @@ const loadingMenu = {
   children: [
     {
       id: 'defaultdashboard',
-      title: 'Dashboard',//word displaying  while loading
+      title: 'Dashboard', //word displaying  while loading
       type: 'item',
       url: '/dashboard/defaultdashboard',
       icon: icons.dashboard
@@ -52,7 +52,7 @@ const loadingMenu = {
       url: '/dashboard/narrators',
       icon: icons.authors
     },
-    
+
     {
       id: 'users',
       title: 'Users',
@@ -78,7 +78,7 @@ export const MenuFromAPI = () => {
   if (menuLoading) return loadingMenu;
 
   // Extract dashboard children and make them top-level items
-  const dashboardChildren = menu?.children?.find(item => item.id === 'dashboard')?.children || [];
+  const dashboardChildren = menu?.children?.find((item) => item.id === 'dashboard')?.children || [];
   console.log('API Dashboard Children:', dashboardChildren);
 
   const subChildrenList = (children) => {
@@ -104,7 +104,7 @@ export const MenuFromAPI = () => {
 
   let menuList = {
     ...menu,
-    title: '', // 
+    title: '', //
     children: childrenList
   };
 
@@ -112,27 +112,26 @@ export const MenuFromAPI = () => {
 };
 
 function fillItem(item, children) {
-  console.log("item:", item)
+  console.log('item:', item);
   // console.log("children:", children)
   let iconName = item?.icon;
 
-  if (item.id === "default") {
-    iconName = "dashboard";
+  if (item.id === 'default') {
+    iconName = 'dashboard';
   }
-  if (item.id === "analytics") {
-    iconName = "analytics";
+  if (item.id === 'analytics') {
+    iconName = 'analytics';
   }
-  if (item.id === "authors") {
-    iconName = "authors";
+  if (item.id === 'authors') {
+    iconName = 'authors';
   }
-  if (item.id === "promoCode") {
-    iconName = "promoCode";
+  if (item.id === 'promoCode') {
+    iconName = 'promoCode';
   }
-  if (item.id === "users") {
-    iconName = "users";
+  if (item.id === 'users') {
+    iconName = 'users';
   }
-  console.log("iconName:", iconName)
-
+  console.log('iconName:', iconName);
 
   const icon = icons[iconName];
   return {
@@ -142,4 +141,3 @@ function fillItem(item, children) {
     ...(children && { children })
   };
 }
-

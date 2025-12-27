@@ -8,7 +8,6 @@ import NewOrders from 'sections/widget/chart/NewOrders';
 import NewUsers from 'sections/widget/chart/NewUsers';
 import Products from 'sections/widget/data/Products';
 
-
 // ==============================|| DASHBOARD - ANALYTICS ||============================== //
 
 const DashboardAnalytics = () => {

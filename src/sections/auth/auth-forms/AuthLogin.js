@@ -32,7 +32,6 @@ import useScriptRef from 'hooks/useScriptRef';
 // ASSETS
 import { Eye, EyeSlash } from 'iconsax-react';
 
-
 // ============================|| JWT - LOGIN ||============================ //
 
 const AuthLogin = () => {
@@ -163,8 +162,7 @@ const AuthLogin = () => {
                   }
                   label={<Typography variant="h6">Keep me sign in</Typography>}
                 />
-                <Links variant="h6" component={Link} href="/forgot-password"
-                  color="text.primary">
+                <Links variant="h6" component={Link} href="/forgot-password" color="text.primary">
                   Forgot Password?
                 </Links>
               </Stack>

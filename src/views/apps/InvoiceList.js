@@ -142,10 +142,10 @@ function ReactTable({ columns, data }) {
                     status === 'All'
                       ? data.length
                       : status === 'Paid'
-                      ? counts.Paid
-                      : status === 'Unpaid'
-                      ? counts.Unpaid
-                      : counts.Cancelled
+                        ? counts.Paid
+                        : status === 'Unpaid'
+                          ? counts.Unpaid
+                          : counts.Cancelled
                   }
                   color={status === 'All' ? 'primary' : status === 'Paid' ? 'success' : status === 'Unpaid' ? 'warning' : 'error'}
                   variant="light"

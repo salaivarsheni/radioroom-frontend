@@ -73,22 +73,13 @@ const EcommerceDataChart = ({ series, categories }) => {
     }
   };
 
-  return (
-    <ReactApexChart
-      options={options}
-      series={series}
-      type="bar"
-      height={250}
-    />
-  );
+  return <ReactApexChart options={options} series={series} type="bar" height={250} />;
 };
-
 
 EcommerceDataChart.propTypes = {
   series: PropTypes.array.isRequired,
   categories: PropTypes.array.isRequired
 };
-
 
 // ==============================|| CHART WIDGET - PROJECT ANALYTICS ||============================== //
 
@@ -107,12 +98,10 @@ export default function ProjectAnalytics() {
         const list = res.data?.data || [];
 
         // X-axis labels
-        const storyNames = list.map(item => item.story_title_english);
+        const storyNames = list.map((item) => item.story_title_english);
 
         // Y-axis values (convert seconds → hours)
-        const listenHours = list.map(item =>
-          Math.round(item.total_listen_seconds / 3600)
-        );
+        const listenHours = list.map((item) => Math.round(item.total_listen_seconds / 3600));
 
         setCategories(storyNames);
         setChartSeries([
@@ -121,7 +110,6 @@ export default function ProjectAnalytics() {
             data: listenHours
           }
         ]);
-
       } catch (err) {
         console.error(err);
       }
@@ -130,8 +118,6 @@ export default function ProjectAnalytics() {
     fetchChartData();
   }, []);
 
-
-
   const handleChangeSelect = (event) => {
     setAge(event.target.value);
   };
@@ -139,7 +125,6 @@ export default function ProjectAnalytics() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
 
   return (
     <MainCard content={false}>
@@ -176,10 +161,7 @@ export default function ProjectAnalytics() {
                     <MoreIcon />
                   </IconButton> */}
                 </Stack>
-                <EcommerceDataChart
-                  series={chartSeries}
-                  categories={categories}
-                />
+                <EcommerceDataChart series={chartSeries} categories={categories} />
               </Stack>
             </Grid>
             <Grid item xs={12} md={4}>

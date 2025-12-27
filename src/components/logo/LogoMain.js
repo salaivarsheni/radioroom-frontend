@@ -6,16 +6,12 @@ import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 // import logoDark from 'assets/images/logo-dark.svg';
 
-
 // ==============================|| LOGO SVG ||============================== //
 
 const LogoMain = () => {
   const theme = useTheme();
   return (
-
     <img src="/assets/images/logo.png" alt="icon logo" width="80" />
-
-
 
     // <svg width="66" height="28" viewBox="0 0 66 28" fill="none" xmlns="http://www.w3.org/2000/svg">
     //   <path

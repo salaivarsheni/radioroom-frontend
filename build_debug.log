@@ -1,0 +1,24 @@
+
+> able-pro-material-next-js@1.0.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./src/app/(dashboard)/dashboard/narrators/add-narrators/page.js
+Module not found: Can't resolve '../../../../../../node_modules/@mui/system/index'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/sections/forms/plugins/ReactQuill.js
+Module not found: Can't resolve 'react-quill/dist/quill.snow.css'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/views/forms-tables/forms/plugins/EditorPage.js
+
+
+> Build failed because of webpack errors
